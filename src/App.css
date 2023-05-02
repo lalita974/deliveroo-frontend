@@ -3,9 +3,7 @@
 .app {
   height: 100vh;
   width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 * {
@@ -18,4 +16,144 @@ button {
   font-family: inherit;
   border: none;
   background-color: #fff;
+}
+
+/* HEADER */
+
+header {
+  border-bottom: 1px solid #e0dede;
+}
+header img {
+  height: 55px;
+  width: 165px;
+}
+
+header div {
+  width: 1224px;
+  margin: 0 auto;
+}
+
+/* SECTION 1 */
+
+section img {
+  height: 200px;
+  width: 350px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.sectionheader {
+  width: 1224px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 30px 0px 0px 0px;
+  gap: 20px;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 40px 0;
+  color: #2e3333;
+}
+
+.sectionheader p {
+  font-size: 19px;
+  color: #868a8a;
+  line-height: 28px;
+  padding-right: 30px;
+}
+
+/* BLOC PRINCIPAL */
+
+main {
+  background-color: #f3f5f5;
+}
+
+.blocprincipal {
+  margin: 0px auto;
+  width: 1224px;
+  display: flex;
+  gap: 30px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 20px;
+  padding: 20px 0px 20px 0px;
+  color: #2e3333;
+}
+
+.colonneleft {
+  flex: 70;
+}
+
+.colonneright {
+  background-color: green;
+  flex: 30;
+}
+
+/* BLOC DETAIL */
+
+.blocdetail {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/* SOUS BLOC */
+
+.sousbloc {
+  background-color: white;
+  height: 160px;
+  width: 400px;
+  padding: 15px;
+  display: flex;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  justify-content: space-between;
+  gap: 10px;
+}
+h3 {
+  font-size: 18px;
+  line-height: 20px;
+  color: #2e3333;
+  margin-bottom: 10px;
+}
+
+.description {
+  color: #808484;
+  font-size: 14px;
+  line-height: 20px;
+  height: 43px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.sousbloc img {
+  height: 130px;
+  width: 130px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.price-popular {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.price {
+  color: #808484;
+  font-size: 17px;
+}
+
+.popular {
+  color: #ff8000;
+  font-size: 12px;
+  font-weight: bolder;
 }
