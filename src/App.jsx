@@ -3,12 +3,13 @@ import "./App.css";
 import axios from "axios";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 library.add(faStar);
+import Meal from "./components/Meal";
 
 const App = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
+  const [panier, setPanier] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -53,24 +54,12 @@ const App = () => {
                     <div className="blocdetail">
                       {elem.meals.map((meal) => {
                         return (
-                          <div key={meal.id} className="sousbloc">
-                            <article>
-                              <h3>{meal.title}</h3>
-                              <p className="description">{meal.description}</p>
-                              <div className="price-popular">
-                                <p className="price">{meal.price} €</p>
-                                {meal.popular && (
-                                  <p className="popular">
-                                    <FontAwesomeIcon icon="star" />
-                                    Populaire
-                                  </p>
-                                )}
-                              </div>
-                            </article>
-                            {meal.picture && (
-                              <img src={meal.picture} alt={meal.name} />
-                            )}
-                          </div>
+                          <Meal
+                            key={meal.id}
+                            meal={meal}
+                            panier={panier}
+                            setPanier={setPanier}
+                          />
                         );
                       })}
                     </div>
@@ -81,7 +70,19 @@ const App = () => {
               }
             })}
           </section>
-          <section className="colonneright">Helllloooo</section>
+          <section className="colonneright">
+            <div>
+              <button>Valider mon panier</button>
+              {panier.map((elem) => {
+                return (
+                  <div key={elem.plat}>
+                    <p>{elem.plat}</p>
+                    <p>{elem.quantite}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
         </div>
       </main>
     </div>

@@ -93,7 +93,6 @@ h2 {
 }
 
 .colonneright {
-  background-color: green;
   flex: 30;
 }
 
@@ -110,12 +109,11 @@ h2 {
 .sousbloc {
   background-color: white;
   height: 160px;
-  width: 400px;
+  width: 48%;
   padding: 15px;
   display: flex;
   border-radius: 5px;
   margin-bottom: 20px;
-  justify-content: space-between;
   gap: 10px;
 }
 h3 {
