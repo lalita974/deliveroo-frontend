@@ -8,8 +8,18 @@ const Meal = (props) => {
       className="sousbloc"
       onClick={() => {
         const newTab = [...panier];
+        if (newTab.length === 0) {
+          newTab.push({ plat: meal.title, quantite: 1 });
+          return setPanier(newTab);
+        }
+        for (let i = 0; i < newTab.length; i++) {
+          if (newTab[i].plat === meal.title) {
+            newTab[i].quantite++;
+            return setPanier(newTab);
+          }
+        }
         newTab.push({ plat: meal.title, quantite: 1 });
-        setPanier(newTab);
+        return setPanier(newTab);
       }}
     >
       <article>

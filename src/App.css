@@ -101,7 +101,7 @@ h2 {
 .blocdetail {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  gap: 20px;
 }
 
 /* SOUS BLOC */
@@ -112,6 +112,7 @@ h2 {
   width: 48%;
   padding: 15px;
   display: flex;
+  justify-content: space-between;
   border-radius: 5px;
   margin-bottom: 20px;
   gap: 10px;

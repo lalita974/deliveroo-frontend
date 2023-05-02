@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
+import Meal from "./components/Meal";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 library.add(faStar);
-import Meal from "./components/Meal";
 
 const App = () => {
   const [data, setData] = useState();
@@ -73,11 +73,20 @@ const App = () => {
           <section className="colonneright">
             <div>
               <button>Valider mon panier</button>
-              {panier.map((elem) => {
+              {panier.map((elem, index) => {
                 return (
-                  <div key={elem.plat}>
-                    <p>{elem.plat}</p>
+                  <div key={index}>
+                    <button
+                      onClick={() => {
+                        const newTab = [...panier];
+                        newTab[index].quantite = newTab[index].quantite - 1;
+                      }}
+                    >
+                      -
+                    </button>
                     <p>{elem.quantite}</p>
+                    <button>+</button>
+                    <p>{elem.plat}</p>
                   </div>
                 );
               })}
